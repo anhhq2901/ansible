@@ -4,3 +4,7 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
+    - name: Start Service NGINX
+      service:
+        name: nginx
+        state: started
