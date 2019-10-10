@@ -1,5 +1,6 @@
-- name: Hello World Sample
-  hosts: all
+- hosts: all
+  become_user: root
+  become: true
   tasks:
     - name: Hello Message
       debug:
