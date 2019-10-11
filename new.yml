@@ -1,6 +1,6 @@
 ---
 - name: Create a VM from a template
-  hosts: localhost
+  hosts: all
   connection: local
   gather_facts: no
   tasks:
@@ -15,3 +15,4 @@
       datacenter: "[Office-Team]"
       folder: /[Office-Team]/vm
       state: poweredon
+      
