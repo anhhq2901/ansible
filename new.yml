@@ -20,11 +20,10 @@
             type: thin
             datastore: "[Office-Team]"
             folder: "/[Office-Team]/vm"
-        networks:
+      networks:
         - name: VM Network
           type: dhcp
-        hardware:
+      hardware:
           memory_mb: 4096
-        wait_for_ip_address: True
-        state: present
-      register: newvm
+      wait_for_ip_address: True
+      state: present
