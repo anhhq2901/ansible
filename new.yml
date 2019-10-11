@@ -16,7 +16,7 @@
       folder: /[Office-Team]/vm
       state: poweredon
       disk:
-          - size_gb: 50
+          - size_gb: 60
             type: thin
             datastore: "[Office-Team]"
             folder: "/[Office-Team]/vm"
