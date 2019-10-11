@@ -9,7 +9,7 @@
     - name: Create VM from template
       vmware_guest:
         validate_certs: False
-        hostname: "Ubuntu 16.04"
+        hostname: 192.168.69.42
         username: "anhhq"
         password: "123@123a"
         esxi_hostname: "192.168.69.40"
