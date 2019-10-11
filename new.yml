@@ -13,13 +13,13 @@
         username: administrator@vsphere.local
         password: Aa@123456
         esxi_hostname: "192.168.69.40"
-        datacenter: "[Office-Team]"
+        datacenter: "[Office-Team]/vmqa"
         name: "Ansible AWX Test VM"
         template: "[Template][192.168.69.46] Ubuntu 16.04"
         disk:
-          - size_gb: "{{ disk_size | default(50) }}"
+          - size_gb: 50
             type: thin
-            datastore: "[Office-Team]"
+            datastore: "[Office-Team]/vmqa"
         networks:
         - name: VM Network
           type: dhcp
