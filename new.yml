@@ -4,26 +4,12 @@
   connection: local
   gather_facts: no
   tasks:
-  - name: Clone the template
-    vmware_guest:
+  - name: Configure IP address on ESX host
+    vmware_vmkernel_ip_config:
       hostname: 192.168.69.42
       username: administrator@vsphere.local
       password: Aa@123456
-      validate_certs: False
-      name: VMtest_qa
-      template: "[Template][192.168.69.46] Ubuntu 16.04"
-      datacenter: "[Office-Team]"
-      folder: /[Office-Team]/vm
-      state: poweredon
-      disk:
-          - size_gb: 60
-            type: thin
-            datastore: "[Office-Team]"
-            folder: "/[Office-Team]/vm"
-      networks:
-        - name: VM Network
-          type: dhcp
-      hardware:
-          memory_mb: 4096
-      wait_for_ip_address: True
-      state: present
+      vmk_name: VMtest_qa
+      ip_address: 192.168.69.48
+      subnet_mask: 255.255.255.0
+    delegate_to: localhost
