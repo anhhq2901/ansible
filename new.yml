@@ -1,32 +1,18 @@
 ---
-# create a new VM from a template
-
-- name: VM from template
+- name: Create a VM from a template
   hosts: all
-  gather_facts: false
   connection: local
+  gather_facts: no
   tasks:
-    - name: Create VM from template
-      vmware_guest:
-        validate_certs: False
-        hostname: 192.168.69.42
-        username: administrator@vsphere.local
-        password: Aa@123456
-        esxi_hostname: "192.168.69.40"
-        datacenter: "[Office-Team]"
-        folder: "/[Office-Team]/vmqa"
-        name: "Ansible AWX Test VM"
-        template: "[Template][192.168.69.46] Ubuntu 16.04"
-        disk:
-          - size_gb: 50
-            type: thin
-            datastore: "[Office-Team]"
-            folder: "/[Office-Team]/vmqa"
-        networks:
-        - name: VM Network
-          type: dhcp
-        hardware:
-          memory_mb: 1024
-        wait_for_ip_address: True
-        state: present
-      register: newvm
+  - name: Clone the template
+    vmware_guest:
+      hostname: 192.168.69.42
+      username: administrator@vsphere.local
+      password: Aa@123456
+      validate_certs: False
+      name: vmqa
+      template: template: "[Template][192.168.69.46] Ubuntu 16.04"
+      datacenter: "[Office-Team]"
+      folder: "/[Office-Team]/vmqa"
+      state: poweredon
+      wait_for_ip_address: yes
