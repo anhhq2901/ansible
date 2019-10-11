@@ -15,4 +15,16 @@
       datacenter: "[Office-Team]"
       folder: /[Office-Team]/vm
       state: poweredon
-      
+      disk:
+          - size_gb: 50
+            type: thin
+            datastore: "[Office-Team]"
+            folder: "/[Office-Team]/vm"
+        networks:
+        - name: VM Network
+          type: dhcp
+        hardware:
+          memory_mb: 4096
+        wait_for_ip_address: True
+        state: present
+      register: newvm
