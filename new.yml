@@ -11,7 +11,7 @@
       password: Aa@123456
       validate_certs: False
       name: vmqa
-      template: template: "[Template][192.168.69.46] Ubuntu 16.04"
+      template: "[Template][192.168.69.46] Ubuntu 16.04"
       datacenter: "[Office-Team]"
       folder: "/[Office-Team]/vmqa"
       state: poweredon
