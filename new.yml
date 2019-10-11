@@ -10,8 +10,8 @@
       vmware_guest:
         validate_certs: False
         hostname: 192.168.69.42
-        username: "anhhq"
-        password: "123@123a"
+        username: administrator@vsphere.local
+        password: Aa@123456
         esxi_hostname: "192.168.69.40"
         datacenter: "[Office-Team]"
         name: "Ansible AWX Test VM"
