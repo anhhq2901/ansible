@@ -1,4 +1,30 @@
-- name: Provide information about vCenter
-  vmware_about_facts:
-  delegate_to: localhost
-  register: vcenter_about_info
+---
+# create a new VM from a template
+
+- name: VM from template
+  hosts: localhost
+  gather_facts: false
+  connection: local
+ tasks:
+    - name: Create VM from template
+      vmware_guest:
+        validate_certs: False
+        hostname: "Ubuntu 16.04"
+        username: "anhhq"
+        password: "123@123a"
+        esxi_hostname: "192.168.69.40"
+        datacenter: "[Office-Team]"
+        name: "Ansible AWX Test VM"
+        template: "[Template][192.168.69.46] Ubuntu 16.04"
+        disk:
+          - size_gb: "{{ disk_size | default(50) }}"
+            type: thin
+            datastore: "[Office-Team]"
+        networks:
+        - name: VM Network
+          type: dhcp
+        hardware:
+          memory_mb: "{{ vm_memory | default(1024) }}"
+        wait_for_ip_address: True
+        state: present
+      register: newvm
