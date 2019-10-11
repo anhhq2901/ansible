@@ -10,7 +10,7 @@
       username: administrator@vsphere.local
       password: Aa@123456
       validate_certs: False
-      name: testvm_2
+      name: VMtest_qa
       template: "[Template][192.168.69.46] Ubuntu 16.04"
       datacenter: "[Office-Team]"
       folder: /[Office-Team]/vm
