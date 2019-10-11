@@ -13,6 +13,6 @@
       name: vmqa
       template: "[Template][192.168.69.46] Ubuntu 16.04"
       datacenter: "[Office-Team]"
-      folder: "/[Office-Team]/vmqa"
+      folder: "/datastore2/vmqa"
       state: poweredon
       wait_for_ip_address: yes
