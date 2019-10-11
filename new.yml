@@ -26,7 +26,7 @@
         - name: VM Network
           type: dhcp
         hardware:
-          memory_mb: "{{ vm_memory | default(1024) }}"
+          memory_mb: 1024
         wait_for_ip_address: True
         state: present
       register: newvm
