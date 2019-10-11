@@ -2,7 +2,7 @@
 # create a new VM from a template
 
 - name: VM from template
-  hosts: localhost
+  hosts: all
   gather_facts: false
   connection: local
   tasks:
