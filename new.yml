@@ -1,6 +1,6 @@
 ---
 - name: Create a VM from a template
-  hosts: all
+  hosts: localhost
   connection: local
   gather_facts: no
   tasks:
@@ -10,9 +10,8 @@
       username: administrator@vsphere.local
       password: Aa@123456
       validate_certs: False
-      name: vmqa
+      name: testvm_2
       template: "[Template][192.168.69.46] Ubuntu 16.04"
       datacenter: "[Office-Team]"
-      folder: "/datastore2/vmqa"
+      folder: /[Office-Team]/vm
       state: poweredon
-      wait_for_ip_address: yes
