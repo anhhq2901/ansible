@@ -12,5 +12,5 @@
       password: "{{ vcenter_pass }}"
       esxi_hostname: "{{ esxhost }}"
     register: host_facts
-      delegate_to: localhost
+    delegate_to: localhost
   - debug: var=host_facts.ansible_facts
