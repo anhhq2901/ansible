@@ -11,5 +11,5 @@
       username: "{{ vcenter_user }}"
       password: "{{ vcenter_pass }}"
       esxi_hostname: "{{ esxhost }}"
-  register: host_facts
-  delegate_to: localhost
+    register: host_facts
+    delegate_to: localhost
