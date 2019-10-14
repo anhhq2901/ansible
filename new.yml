@@ -6,7 +6,14 @@
   vars_files:
   - vars/vars.yml
   tasks:
-  - name: Clone the template
+#  - name: Clone the template
+  - name: Provide information about vCenter
+    vmware_about_facts:
+      hostname: '{{ vcenter_hostname }}'
+      username: '{{ vcenter_user }}'
+      password: '{{ vcenter_pass }}'
+  delegate_to: localhost
+  register: vcenter_about_info
     vmware_guest:
       hostname: "{{ vcenter_hostname }}"
       username: "{{ vcenter_user }}"
