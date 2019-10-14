@@ -13,4 +13,6 @@
       esxi_hostname: "{{ esxhost }}"
     register: host_facts
     delegate_to: localhost
-  - debug: var=host_facts
+  - debug:
+    msg:
+      "{{ host_facts }}"
