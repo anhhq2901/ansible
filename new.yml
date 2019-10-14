@@ -6,32 +6,10 @@
   vars_files:
   - vars/vars.yml
   tasks:
-#  - name: Clone the template
   - name: Provide information about vCenter
     vmware_about_facts:
       hostname: '{{ vcenter_hostname }}'
       username: '{{ vcenter_user }}'
       password: '{{ vcenter_pass }}'
-  delegate_to: localhost
-  register: vcenter_about_info
-    vmware_guest:
-      hostname: "{{ vcenter_hostname }}"
-      username: "{{ vcenter_user }}"
-      password: "{{ vcenter_pass }}"
-      validate_certs: False
-      name: "{{ name }}"
-      template: "{{ vmtemplate }}"
-      datacenter: "[Office-Team]"
-      folder: "{{ folder }}"
-      state: poweredon
-      disk:
-          - size_gb: "{{ disk_size }}"
-            type: thin
-            datastore: "{{ datastore }}"      
-      networks:
-        - name: VM Network
-          type: dhcp
-      hardware:
-          memory_mb: "{{ vm_memory }}"
-      wait_for_ip_address: True
-      state: present
+    delegate_to: localhost
+    register: vcenter_about_info
