@@ -3,27 +3,28 @@
   hosts: all
   connection: local
   gather_facts: no
+  vars_files:
+  - vars/vars.yml
   tasks:
   - name: Clone the template
     vmware_guest:
-      hostname: 192.168.69.42
-      username: administrator@vsphere.local
-      password: Aa@123456
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_user }}"
+        password: "{{ vcenter_pass }}"
       validate_certs: False
-      name: VMtest_qa
-      template: "[Template][192.168.69.46] Ubuntu 16.04"
+      name: "{{ name }}"
+      template: "{{ vmtemplate }}"
       datacenter: "[Office-Team]"
-      folder: /[Office-Team]/vm
+      folder: "{{ folder }}"
       state: poweredon
       disk:
-          - size_gb: 50
+          - size_gb: "{{ disk_size }}"
             type: thin
-            datastore: "[Office-Team]"
-            folder: "/[Office-Team]/vm"
+            datastore: "{{ datastore }}"      
       networks:
         - name: VM Network
           type: dhcp
       hardware:
-          memory_mb: 4096
+          memory_mb: "{{ vm_memory }}"
       wait_for_ip_address: True
       state: present
