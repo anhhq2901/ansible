@@ -1,5 +1,5 @@
 ---
-- name: Create a VM from a template
+- name: Check Resouce
   hosts: all
   connection: local
   gather_facts: no
@@ -13,3 +13,4 @@
       esxi_hostname: "{{ esxhost }}"
     register: host_facts
     delegate_to: localhost
+  - debug: var=host_facts.stdout_lines
