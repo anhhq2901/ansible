@@ -8,9 +8,9 @@
   tasks:
   - name: Clone the template
     vmware_guest:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_user }}"
-        password: "{{ vcenter_pass }}"
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_user }}"
+      password: "{{ vcenter_pass }}"
       validate_certs: False
       name: "{{ name }}"
       template: "{{ vmtemplate }}"
