@@ -1,4 +1,0 @@
-- name: Provide information about vCenter
-  vmware_about_facts:
-  delegate_to: localhost
-  register: vcenter_about_info
