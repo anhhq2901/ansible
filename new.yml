@@ -28,8 +28,15 @@
           memory_mb: "{{ vm_memory }}"
       wait_for_ip_address: True
       state: present
+
+- pause:
+    minutes: 2
+
 - name: Workwith Ubuntu Server
   hosts: 192.168.69.46
+  remote_user: ha.quoc.anh
+  become_user: root
+  become: true
   connection: local
   gather_facts: no
   vars_files:
