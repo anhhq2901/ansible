@@ -1,6 +1,5 @@
 ---
 - name: Create a VM from a template
-  hosts: all
   connection: local
   gather_facts: no
   vars_files:
@@ -30,7 +29,7 @@
       state: present
 
 - name: Workwith Ubuntu Server
-  hosts: 192.168.69.46
+  hosts: "{{ hostip }}"
   remote_user: ha.quoc.anh
   become_user: root
   become: true
@@ -54,7 +53,9 @@
     apt:
       name: "{{ packages }}"
       state: latest
+      become: true
   - name: Start NGINX service after install
     service:
       name: nginx
       state: started
+      become: true
