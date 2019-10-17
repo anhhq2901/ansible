@@ -12,3 +12,5 @@ folder: "/[Office-Team]/vm"
 disk_size: 50
 vm_memory: 4096
 folder: /[Office-Team]/vm
+VMIP: 192.168.69.70
+packages: nginx
