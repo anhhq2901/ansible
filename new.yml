@@ -29,8 +29,10 @@
       wait_for_ip_address: True
       state: present
 
-- pause:
-    minutes: 2
+- name: sleep for 100 seconds and continue with play
+  wait_for:
+    timeout: 100
+  delegate_to: localhost
 
 - name: Workwith Ubuntu Server
   hosts: 192.168.69.46
