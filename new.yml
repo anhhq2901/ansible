@@ -29,12 +29,6 @@
       wait_for_ip_address: True
       state: present
 
-- name: Wait for port 22 to become open on the host, don't start checking for 10 seconds
-  wait_for:
-    host: "{{ hostip }}"
-    port: 22
-    delay: 10
-
 - name: Workwith Ubuntu Server
   hosts: 192.168.69.46
   remote_user: ha.quoc.anh
@@ -44,6 +38,15 @@
   gather_facts: no
   vars_files:
   - vars/vars.yml
+  
+  pre_tasks:
+    - name: Wait for port 22 to become open on the host, don't start checking for 10 seconds
+      wait_for:
+        port: 22
+        host: "{{ hostip }}"
+        search_regex: OpenSSH
+        delay: 100
+        
   tasks:
   - name: Update Packet
     command: apt-get update
