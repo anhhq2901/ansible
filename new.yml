@@ -45,11 +45,12 @@
         port: 22
         host: "{{ hostip }}"
         search_regex: OpenSSH
-        delay: 100
+        delay: 1
         
   tasks:
   - name: Update Packet
-    command: apt-get update
+    apt:
+      update_cache: yes
   - name: Install NGINX
     apt:
       name: "{{ packages }}"
