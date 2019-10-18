@@ -50,6 +50,7 @@
     yum:
       name: '*'
       state: latest
+      connection: local
   - name: Install NGINX
     yum:
       name: nginx
