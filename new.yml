@@ -26,7 +26,6 @@
           type: dhcp
       hardware:
           memory_mb: "{{ vm_memory }}"
-      wait_for_ip_address: True
       state: present
 
 - name: Workwith Centos Server
