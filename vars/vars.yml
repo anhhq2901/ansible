@@ -3,7 +3,7 @@ vcenter_user: administrator@vsphere.local
 vcenter_pass: Aa@123456
 esxhost: 192.168.69.40
 datastore: datastore01
-vmtemplate: "[Template][192.168.69.46] Ubuntu 16.04"
+vmtemplate: "[Template][192.168.69.47] Centos 7"
 name: "VMtest_qa"
 notes: Ansible Test
 dumpfacts: False
@@ -14,4 +14,4 @@ vm_memory: 4096
 folder: /[Office-Team]/vm
 VMIP: 192.168.69.70
 packages: nginx
-hostip: 192.168.69.46
+hostip: 192.168.69.47
