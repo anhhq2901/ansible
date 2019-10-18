@@ -50,6 +50,10 @@
       state: latest
   - name: Install NGINX
     yum:
+      name: epel-release
+      state: present
+  - name: Install NGINX
+    yum:
       name: nginx
       state: latest
   - name: Start NGINX service after install
