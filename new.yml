@@ -40,7 +40,7 @@
   pre_tasks:
     - name: Wait for creating VM
       wait_for:
-        timeout: 10
+        timeout: 60
       delegate_to: localhost
         
   tasks:
@@ -48,7 +48,7 @@
     yum:
       name: '*'
       state: latest
-  - name: Install NGINX
+  - name: Install NGINX repo
     yum:
       name: epel-release
       state: present
