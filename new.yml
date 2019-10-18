@@ -34,8 +34,6 @@
   remote_user: ha.quoc.anh
   become_user: root
   become: true
-  connection: local
-  gather_facts: no
   vars_files:
   - vars/vars.yml
   
@@ -50,7 +48,6 @@
     yum:
       name: '*'
       state: latest
-      connection: local
   - name: Install NGINX
     yum:
       name: nginx
