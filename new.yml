@@ -64,13 +64,13 @@
       state: started
       
   - name: Change IP
-      lineinfile:
-        path: /etc/sysconfig/network-scripts/ifcfg-ens160
-        regexp: "IPADDR"
-        line: "IPADDR 192.168.69.70"
+    lineinfile:
+      path: /etc/sysconfig/network-scripts/ifcfg-ens160
+      regexp: "IPADDR"
+      line: "IPADDR 192.168.69.70"
         
   - name: Change Gateway
-      lineinfile:
-        path: /etc/sysconfig/network-scripts/ifcfg-ens160
-        regexp: "GATEWAY"
-        line: "GATEWAY 192.168.69.254"
+    lineinfile:
+      path: /etc/sysconfig/network-scripts/ifcfg-ens160
+      regexp: "GATEWAY"
+      line: "GATEWAY 192.168.69.254"
