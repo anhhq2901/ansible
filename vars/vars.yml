@@ -4,7 +4,7 @@ vcenter_pass: Aa@123456
 esxhost: 192.168.69.40
 datastore: datastore01
 vmtemplate: "[Template][192.168.69.47] Centos 7"
-name: "VMtest_qa"
+name: "DEMO"
 notes: Ansible Test
 dumpfacts: False
 datastore: "[Office-Team]"
