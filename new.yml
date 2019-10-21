@@ -40,7 +40,7 @@
   pre_tasks:
     - name: Wait for creating VM
       wait_for:
-        timeout: 60
+        timeout: 20
       delegate_to: localhost
         
   tasks:
